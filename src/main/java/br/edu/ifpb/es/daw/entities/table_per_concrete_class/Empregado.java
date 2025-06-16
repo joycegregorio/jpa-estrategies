@@ -1,6 +1,7 @@
 package br.edu.ifpb.es.daw.entities.table_per_concrete_class;
 
 
+import br.edu.ifpb.es.daw.entities.single_table_per_class.Projeto;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -36,15 +37,14 @@ public class Empregado {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        if (!super.equals(obj)) return false;
+        if (!(obj instanceof Empregado)) return false;
         Empregado empregado = (Empregado) obj;
-        return Objects.equals(id, empregado.id) && Objects.equals(nome, empregado.nome);
+        return id != null && id.equals(empregado.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome);
+        return getClass().hashCode();
     }
 
     @Override

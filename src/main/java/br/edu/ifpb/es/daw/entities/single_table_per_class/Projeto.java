@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity(name = "Projeto_STPCH")
-@Table(name = "STPCH_TB_VEICULO")
+@Table(name = "STPCH_TB_PROJETO")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "Projeto", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue("P")
@@ -36,15 +36,14 @@ public class Projeto {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        if (!super.equals(obj)) return false;
+        if (!(obj instanceof Projeto)) return false;
         Projeto projeto = (Projeto) obj;
-        return Objects.equals(id, projeto.id) && Objects.equals(nome, projeto.nome);
+        return id != null && id.equals(projeto.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome);
+        return getClass().hashCode();
     }
 
     @Override

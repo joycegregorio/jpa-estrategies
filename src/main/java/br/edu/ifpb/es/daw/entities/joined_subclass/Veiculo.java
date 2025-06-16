@@ -1,5 +1,6 @@
 package br.edu.ifpb.es.daw.entities.joined_subclass;
 
+import br.edu.ifpb.es.daw.entities.single_table_per_class.Projeto;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -47,9 +48,10 @@ public class Veiculo {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) return true;
+        if (!(obj instanceof Projeto)) return false;
         Veiculo veiculo = (Veiculo) obj;
-        return Objects.equals(id, veiculo.id) && Objects.equals(nome, veiculo.nome) && Objects.equals(construtora, veiculo.construtora);
+        return id != null && id.equals(veiculo.id);
     }
 
     @Override
