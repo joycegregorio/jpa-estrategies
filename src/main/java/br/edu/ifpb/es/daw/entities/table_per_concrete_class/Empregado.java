@@ -2,7 +2,7 @@ package br.edu.ifpb.es.daw.entities.table_per_concrete_class;
 
 import jakarta.persistence.*;
 
-@Entity(name = "Empregado_TPCC")
+@Entity
 @Table(name = "TPCC_TB_EMPREGADO")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Empregado {

@@ -6,8 +6,8 @@ import jakarta.persistence.Entity;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Entity(name = "ProjetoGrande_STPCH")
-@DiscriminatorValue("PG")
+@Entity
+@DiscriminatorValue("GRANDE")
 public class ProjetoGrande extends Projeto{
 
     private BigDecimal orcamento;

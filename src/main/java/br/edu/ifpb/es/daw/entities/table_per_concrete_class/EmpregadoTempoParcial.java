@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Entity(name = "EmpregadoTempoParcial_TPCC")
+@Entity
 @Table(name = "TPCC_TB_EMPREGADO_TEMPO_PARCIAL")
 public class EmpregadoTempoParcial extends Empregado{
 

@@ -6,8 +6,8 @@ import jakarta.persistence.Entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-@Entity(name = "ProjetoPequeno_STPCH")
-@DiscriminatorValue("P")
+@Entity
+@DiscriminatorValue("PEQUENO")
 public class ProjetoPequeno extends Projeto{
 
     private LocalDate prazoMazimoConclusao;

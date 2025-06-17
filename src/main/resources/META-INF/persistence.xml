@@ -7,6 +7,21 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- TODO -->
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.Bicicleta</class>
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.Caminhao</class>
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.Carro</class>
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.Veiculo</class>
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.VeiculoDePassageiro</class>
+		<class>br.edu.ifpb.es.daw.entities.joined_subclass.VeiculoDeTransporte</class>
+
+		<class>br.edu.ifpb.es.daw.entities.single_table_per_class.Projeto</class>
+		<class>br.edu.ifpb.es.daw.entities.single_table_per_class.ProjetoGrande</class>
+		<class>br.edu.ifpb.es.daw.entities.single_table_per_class.ProjetoPequeno</class>
+
+		<class>br.edu.ifpb.es.daw.entities.table_per_concrete_class.Empregado</class>
+		<class>br.edu.ifpb.es.daw.entities.table_per_concrete_class.EmpregadoTempoIntegral</class>
+		<class>br.edu.ifpb.es.daw.entities.table_per_concrete_class.EmpregadoTempoParcial</class>
+
 		<!-- <class>br.edu.ifpb.es.daw.entities.Track</class> -->
 
 		<properties>
@@ -15,9 +30,9 @@
 			<!--
 			 -->
 			<property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/daw" />
-			<property name="jakarta.persistence.jdbc.user" value="daw" />
-			<property name="jakarta.persistence.jdbc.password" value="daw" />
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ep-polished-wildflower-a4vsczoz-pooler.us-east-1.aws.neon.tech/TestesDisc" />
+			<property name="jakarta.persistence.jdbc.user" value="TestesDisc_owner" />
+			<property name="jakarta.persistence.jdbc.password" value="npg_mFUQs79SBHuy" />
 			<!-- /Database PostgreSQL-->
 
 			<!-- HIBERNATE -->

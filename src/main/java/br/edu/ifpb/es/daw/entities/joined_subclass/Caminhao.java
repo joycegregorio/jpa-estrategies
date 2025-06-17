@@ -1,12 +1,14 @@
 package br.edu.ifpb.es.daw.entities.joined_subclass;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 
 import java.util.Objects;
 
-@Entity(name = "Caminhao_JS")
+@Entity
 @PrimaryKeyJoinColumn(name = "veiculo_transporte_id")
+@DiscriminatorValue("A")
 public class Caminhao extends VeiculoDeTransporte {
 
     private Integer numeroDeVagoes;

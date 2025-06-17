@@ -2,13 +2,11 @@ package br.edu.ifpb.es.daw.entities.single_table_per_class;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
-@Entity(name = "Projeto_STPCH")
+@Entity
 @Table(name = "STPCH_TB_PROJETO")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Projeto", discriminatorType = DiscriminatorType.CHAR)
-@DiscriminatorValue("P")
+@DiscriminatorColumn(name = "TIPO_PROJETO", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("PROJETO_BASE")
 public class Projeto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

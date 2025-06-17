@@ -1,11 +1,8 @@
 package br.edu.ifpb.es.daw.entities.joined_subclass;
 
-import br.edu.ifpb.es.daw.entities.single_table_per_class.Projeto;
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
-@Entity(name = "Veiculo_JS")
+@Entity
 @Table(name = "JS_TB_VEICULO")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "Veiculo", discriminatorType = DiscriminatorType.CHAR)
@@ -49,14 +46,14 @@ public class Veiculo {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof Projeto)) return false;
+        if (!(obj instanceof Veiculo)) return false;
         Veiculo veiculo = (Veiculo) obj;
         return id != null && id.equals(veiculo.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, construtora);
+        return getClass().hashCode();
     }
 
     @Override
