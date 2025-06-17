@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "JS_TB_VEICULO")
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "Veiculo", discriminatorType = DiscriminatorType.CHAR)
+@DiscriminatorColumn(name = "DISC", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue("V")
 public class Veiculo {
 
