@@ -1,10 +1,6 @@
 package br.edu.ifpb.es.daw.entities.table_per_concrete_class;
 
-
-import br.edu.ifpb.es.daw.entities.single_table_per_class.Projeto;
 import jakarta.persistence.*;
-
-import java.util.Objects;
 
 @Entity(name = "Empregado_TPCC")
 @Table(name = "TPCC_TB_EMPREGADO")
@@ -13,6 +9,7 @@ public class Empregado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "EMPREGADO_SEQ", sequenceName = "EMPREGADO_SEQ", allocationSize = 1)
     private Long id;
 
     @Column(nullable = false)

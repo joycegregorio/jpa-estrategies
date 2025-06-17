@@ -1,18 +1,26 @@
 package br.edu.ifpb.es.daw;
 
+import br.edu.ifpb.es.daw.dao.EmpregadoDAO;
+import br.edu.ifpb.es.daw.dao.impl.EmpregadoDAOImpl;
+import br.edu.ifpb.es.daw.entities.table_per_concrete_class.Empregado;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import java.util.List;
 
 public class MainEmpregadoDeleteAll {
 
 	public static void main(String[] args) throws DawException {
 		try(EntityManagerFactory emf = Persistence.createEntityManagerFactory("daw")) {
-			// TODO: Nesta classe, use a interface EmpregadoDAO e a classe EmpregadoDAOImpl
-			//  para recuperar todas as instâncias da hierarquia e remover uma a uma
-			//  todas elas. Como JPA suporta Herança, recuperar todas as instâncias da
-			//  classe raiz da hierarquia recupera as instâncias de todas as classes da
-			//  hierarquia e não apenas as instâncias da classe raiz.
+			EmpregadoDAO empregadoDAO = new EmpregadoDAOImpl(emf);
+
+			List<Empregado> empregados = empregadoDAO.getAll();
+
+			for (Empregado emp : empregados) {
+				empregadoDAO.delete(emp.getId());
+				System.out.println("Deletado: " + emp);
+			}
+
+			System.out.println("Todos os empregados foram removidos!");
 		}
 	}
-
 }
